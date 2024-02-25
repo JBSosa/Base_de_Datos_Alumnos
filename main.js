@@ -50,8 +50,6 @@ const studentsList = [
   
 const classList = [new Class("Matemáticas")];
 
-setGrade()
-
 // App functions
 let loadApp = () => {
   loadStudents();

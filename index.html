@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base de Datos - Estudiantes</title>
+    <link rel="stylesheet" href="styles.css">
+    <link data-default-icon="https://yt3.ggpht.com/ytc/AIf8zZQQfloohntg0jn8zocGYDRN5TyFoKvUn58b6XvUBQ=s68-c-k-c0x00ffffff-no-rj" rel="icon" sizes="192x192" href="https://yt3.ggpht.com/ytc/AIf8zZQQfloohntg0jn8zocGYDRN5TyFoKvUn58b6XvUBQ=s68-c-k-c0x00ffffff-no-rj">
+</head>
+
+<body onload="loadApp()">
+  
+  <nav>
+    <div class="navContainer">
+      <img alt="Logo UADY"id="logoUADY" src="https://uady.mx/assets/img/logo_uady.svg">
+      <img alt="Logo Dev.F" id="logoDevF" src="https://devf-website.s3.amazonaws.com/static/assets/img/logo-devf-white.svg">
+    </div>
+  </nav>
+
+  <main>
+    <section class="studentSection">
+      <article class="containerRight">
+        <div class="studentListContainer">
+          <input type="search" placeholder="Buscar alumno">
+          <div class="studentList" id="studentList">
+            <div class="studentContainer">Nombre:</div>
+          </div>
+        </div>
+        <div>
+          <button onclick="loadForm()">Agregar estudiante</button>
+          <button onclick="removeElements()">Regresar a clases</button>
+        </div>
+      </article>
+      <article class="containerLeft" id="containerLeft"></article>
+    </section>
+  </main>
+  
+  <footer>
+    <div id="footerMainContainer">© Todos los Derechos Reservados, UADY 2024<br>Esta página puede ser reproducida con fines no lucrativos, siempre y cuando no se mutile, se cite la fuente completa y su dirección electrónica, de otra forma requiere permiso previo por escrito de la institución.</div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

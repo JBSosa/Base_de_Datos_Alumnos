@@ -119,7 +119,7 @@ select {
 .containerRight {
   margin: auto;
   width: 90%;
-  height: 90%;
+  height: 110%;
   display: flex;
   flex-direction: column;
   align-items: center;

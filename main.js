@@ -101,6 +101,7 @@ let chargeData = (id) => {
           <div>
             <button onclick="assignClasses(${student._id})">Agregar Clase</button>
             <button onclick="assignGroup(${student._id})">Asignar Grupo</button>
+            <button onclick="gradeMean(${student._id})">Promedio</button>
             <button onclick="deleteStudent(${student._id})">Eliminar alumno</button>
           </div>
         </div>`;
@@ -182,7 +183,22 @@ let loadClasses = (studentId) => {
 
   document.getElementById("grades").innerHTML = classHTML;
 };
+
+let gradeMean = (studentId) => {
+  const student = findStudentById(studentId)
+  const numericGrades = student._grade.map(grade => parseFloat(grade));
+
+  if (student._grade.length === 0) {
+    return NaN;
+  }
+
+  const sum = numericGrades.reduce((acc, grade) => acc + grade, 0);
+  const mean = sum / numericGrades.length;
   
+  alert(mean);
+};
+
+
 let createClass = (subject, grade) => {
   let estado = "";
 

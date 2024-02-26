@@ -172,18 +172,35 @@ let submitForm = (event) => {
   
 let loadClasses = (studentId) => {
   const student = findStudentById(studentId)
-  let classHTML = "";
 
-  for (subject of student._classes) {
-    classHTML += createClass(subject);
+  let classHTML = "";
+  for (let i = 0; i < student._classes.length; i++) {
+    let subject = student._classes[i];
+    let grade = student._grade[i];
+    classHTML += createClass(subject, grade);
   }
+
   document.getElementById("grades").innerHTML = classHTML;
 };
   
-let createClass = (subject) => {
+let createClass = (subject, grade) => {
+  let estado = "";
+
+  if (grade > 10) {
+    grade = 10
+  } else if (grade < 0) {
+    grade = 0
+  }
+
+  if (grade > 7) {
+    estado = "Aprobado"
+  } else {
+    estado = "Reprobado"
+  }
+
   return `
     <div>
-      <p>Clase: ${subject._name} <span> Calificación: ${subject._grade} </span> <span>Estado: APROBADO</span></p>
+      <p>Clase: ${subject._name} <span> Calificación: ${grade} </span> <span>Estado: ${estado}</span></p>
     </div>
   `;
 };
@@ -194,6 +211,7 @@ let assignClasses = (studentId) => {
   const student = findStudentById(studentId)
   const clase = new Class(className);
   student.addClass(clase);
+  student.addGrade(grade);
   loadClasses(studentId);
 };
   
